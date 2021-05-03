@@ -15,6 +15,12 @@ class kendaraan extends CI_Controller
     //page buat list daftar kendaraan di admin
   }
 
+  public function pesanan()
+  {
+    $content['kendaraan'] = $this->KendaraanModel->get_all();
+    $this->load->view('pesanan', $content);
+  }
+
   public function tambahKendaraan()
   {
     $data = array (

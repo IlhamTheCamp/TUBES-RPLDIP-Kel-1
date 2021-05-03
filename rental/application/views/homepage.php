@@ -13,7 +13,151 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Viga&display=swap" rel="stylesheet" />
 
     <!-- mycss -->
-    <link rel="stylesheet" href="<?php echo base_url('application/views/home/style.css'); ?>" />
+    <!-- <link href="/assets/css/homepage.css" rel="stylesheet" > -->
+    <style>
+      .navbar {
+        position: relative;
+        z-index: 1;
+      }
+      .navbar-brand {
+        font-family: 'viga';
+        font-size: 32px;
+      }
+
+      /* jumbotron  */
+
+      .jumbotron {    
+        background-image: url(homepage/img/tesla1.jpg);
+        background-size: cover;
+        height: 800px;
+        text-align: center;
+        position: relative;
+      }
+
+      .jumbotron .container {
+        z-index: 1;
+        position: relative;
+      }
+
+      .jumbotron::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+        position: absolute;
+        bottom: 0;
+      }
+
+      .jumbotron .display-4 {
+        color: white;
+        font-weight: bolder;
+        font-size: 40px;
+        margin-top: 20px;
+        text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+      }
+
+      .jumbotron .lead {
+        font-family: 'Bebas Neue';
+        font-size: 30px;
+        color: white;
+        text-align: center;
+        margin-top: 25px;
+        text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+      }
+
+      .jumbotron .lead span {
+        font-weight: 500;
+      }
+
+      /* about */
+      #about {
+        padding: 100px 0;
+      }
+
+      /* Desktop version  */
+      @media (min-width: 992px) {
+        .navbar-brand,
+        .nav-link {
+          color: white !important;
+          text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+        }
+        .nav-link {
+          text-transform: uppercase;
+          margin-left: 28px;
+        }
+
+        .nav-link:hover::after {
+          content: '';
+          display: block;
+          border-bottom: 3px solid #7ad7f0;
+          width: 50%;
+          margin: auto;
+          padding-bottom: 5px;
+          margin-bottom: -8px;
+        }
+        .dropdown {
+          text-transform: uppercase;
+          margin-left: 28px;
+        }
+        .jumbotron {
+          height: 1000px;
+        }
+        .jumbotron .display-4 {
+          font-size: 62px;
+        }
+
+        .jumbotron .lead {
+          font-size: 50px;
+        }
+        /*Team*/
+        #our-team {
+          padding: 100px 0;
+          background: #ececec;
+        }
+        #our-team .team-member {
+          padding: 10px;
+          border: 2px solid #ffffff;
+          background: #ffb74d;
+        }
+        #our-team .team-member .team-img {
+          margin: -15px -10px 0 -10px;
+        }
+        #our-team .team-member .team-info {
+          /* padding-bottom: 10px; */
+          text-align: center;
+        }
+        #our-team .team-member:hover .social-icons > li > a {
+          background: #45aed6;
+        }
+        #our-team .team-member:hover .social-icons {
+          height: 35px;
+        }
+        #our-team .social-icons {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          height: 0px;
+          overflow: hidden;
+          -webkit-transition: height 1s; /* For Safari 3.1 to 6.0 */
+          transition: height 1s;
+        }
+        #our-team .social-icons > li {
+          display: inline-block;
+        }
+        #our-team .social-icons > li > a {
+          display: block;
+          width: 32px;
+          height: 32px;
+          line-height: 32px;
+          text-align: center;
+          color: #fff;
+          background: #222534;
+          border-radius: 3px;
+        }
+      }
+
+    </style>
 
     <title>Landing Page</title>
   </head>
@@ -21,24 +165,15 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="#">Rental</a>
+        <a class="navbar-brand" href="<?=base_url();?>assets/css/styleHomepage.css">Rental</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
-            <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-link" href="#services">Our Team</a>
-            <a class="nav-link" href="#">about</a>
-            <div class="dropdown">
-              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Join us </a>
-
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="<?= site_url('admin') ?>">Admin</a>
-                <a class="dropdown-item" href="#">Customer</a>
-                <a class="dropdown-item" href="#">Register</a>
-              </div>
-            </div>
+            <a class="nav-link active" href="<?= site_url()?>">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="<?= site_url('login') ?>" >Customer</a>
+            <a class="nav-link" href="#">Admin</a>
           </div>
         </div>
       </div>
@@ -74,7 +209,7 @@
 
         <div class="row">
           <div class="col-sm-6 wow fadeInLeft">
-            <img class="img-responsive" src="<?php echo base_url('application/views/home/img/about.png'); ?>" alt="" />
+            <img class="img-responsive" src="homepage/img/about.png" alt="" />
           </div>
 
           <div class="col-sm-6 wow fadeInRight">
@@ -114,7 +249,7 @@
           <div class="col-md-3 col-sm-6">
             <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
               <div class="team-img">
-                <img class="img-responsive" src="images/team/01.jpg" alt="" />
+                <img class="img-responsive" src="homepage/img/01.jpg" alt="" />
               </div>
               <div class="team-info">
                 <h3>John Deo</h3>
@@ -125,7 +260,7 @@
           <div class="col-md-3 col-sm-6">
             <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="100ms">
               <div class="team-img">
-                <img class="img-responsive" src="images/team/02.jpg" alt="" />
+                <img class="img-responsive" src="homepage/img/02.jpg" alt="" />
               </div>
               <div class="team-info">
                 <h3>Mike Timobbs</h3>
@@ -136,7 +271,7 @@
           <div class="col-md-3 col-sm-6">
             <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="200ms">
               <div class="team-img">
-                <img class="img-responsive" src="images/team/03.jpg" alt="" />
+                <img class="img-responsive" src="homepage/img/03.jpg" alt="" />
               </div>
               <div class="team-info">
                 <h3>Remo Silvaus</h3>
@@ -147,7 +282,7 @@
           <div class="col-md-3 col-sm-6">
             <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="300ms">
               <div class="team-img">
-                <img class="img-responsive" src="images/team/04.jpg" alt="" />
+                <img class="img-responsive" src="homepage/img/04.jpg" alt="" />
               </div>
               <div class="team-info">
                 <h3>Niscal Deon</h3>

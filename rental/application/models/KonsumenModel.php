@@ -26,16 +26,15 @@ class KonsumenModel extends CI_Model {
 
   //Login Konsumen
   public function loginKonsumen($data){
-      $this->db->where('usernameKonsumen', data['username']);
-      $this->db->where('password', $data['password']);
-      $cek = $this->db->get('konsumen')->row();
+    $this->db->where('usernameKonsumen', $data['username']);
+    $this->db->where('password', $data['password']);
+    $cek = $this->db->get('konsumen')->row();
 		if ($cek) {
 			return true;
 		} else {
 			return false;
 		}
   }
-
 }
 
 /* End of file KonsumenModel.php */
