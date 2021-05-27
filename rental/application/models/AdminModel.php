@@ -9,14 +9,15 @@ class AdminModel extends CI_Model {
 	}
 
 	public function loginAdmin($data)
+	//Fungsi utama untuk usecase login admin
 		{
-			$this->db->where('username', $data['username']);
-			$this->db->where('password', $data['password']);
-			$cek = $this->db->get('admin')->row();
-			if ($cek) {
-				return true;
+			$this->db->where('username', $data['username']); // mengambil data username yang diinputkan
+			$this->db->where('password', $data['password']); // mengambil data password yang diinputkan
+			$cek = $this->db->get('admin')->row(); // mengecek apakah data yang diinputkan ada di database atau tidak
+			if ($cek) { 
+				return true; // jika ada, akan mengembalikan nilai true
 			} else {
-				return false;
+				return false; // jika tidak, akan mengembalikan nilai false
 			}
 		}
 }

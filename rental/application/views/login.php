@@ -28,6 +28,7 @@
                 <div class="col-lg-10 col-xl-7 mx-auto">
                   <h3 class="display-4">Login</h3>
                   <p class="text-muted">Silahkan masukkan Username dan Password anda!</p>
+                  <!-- Membuat form untuk fungsi login pada controller login -->
                   <form action="<?= site_url('login/login') ?>" method="post">
                     <div class="form-group mb-3">
                       <input type="text" name="username" placeholder="Username" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4" required>
@@ -36,7 +37,9 @@
                       <input type="password" name="password" placeholder="Password" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4" required>
                     </div>
                     <div class="row px-3 mb-4">
+                      <!-- Link untuk kembali ke page registrasi -->
                       <a href="<?= site_url('registrasi') ?>" class="ml-auto mb-0 text-sm">Belum Punya Akun? Daftar dulu!</a>
+                      <!-- Link untuk kembali ke page landing -->
                       <a href="<?= site_url() ?>" class="ml-auto mb-0 text-sm">Kembali ke Landing Page</a>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Login</button>

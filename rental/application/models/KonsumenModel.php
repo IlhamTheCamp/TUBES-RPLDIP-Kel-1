@@ -21,18 +21,18 @@ class KonsumenModel extends CI_Model {
 
   //Input data konsumen (Registrasi)
   public function insert_konsumen($data){
-    return $this->db->insert('konsumen', $data);
+    return $this->db->insert('konsumen', $data); //Fungsi untuk menginsert data konsumen pada variable $data ke dalam database
   }
 
   //Login Konsumen
-  public function loginKonsumen($data){
-    $this->db->where('usernameKonsumen', $data['username']);
-    $this->db->where('password', $data['password']);
-    $cek = $this->db->get('konsumen')->row();
+  public function loginKonsumen($data){ //Parameter data merupakan array berisi data username & password yang diinputkan user
+    $this->db->where('usernameKonsumen', $data['username']); // mengambil data username yang diinputkan & mengeceknya di database
+    $this->db->where('password', $data['password']); // mengambil data password yang diinputkan & mengeceknya di database
+    $cek = $this->db->get('konsumen')->row(); // mengecek database dan mereturn data konsumen tersebut jika ada
 		if ($cek) {
-			return true;
+			return true; // mereturn true jika datanya ada
 		} else {
-			return false;
+			return false; // mereturn false jika datanya tidak ada
 		}
   }
 }

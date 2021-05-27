@@ -27,6 +27,7 @@
 
         <!-- Registeration Form -->
         <div class="col-md-7 col-lg-6 ml-auto">
+          <!-- Membuat form untuk fungsi registrasi pada controller registrasi -->
           <form action="<?= site_url('registrasi/registrasi') ?>" method="post">
             <div class="row">
               <!-- Nama Lengkap -->
@@ -103,6 +104,7 @@
 
               <!-- Already Registered -->
               <div class="text-center w-100">
+                <!-- Klik link ini untuk user yang sudah punya akun, dan akan di redirect ke halaman login  -->
                 <p class="text-muted font-weight-bold">Sudah Punya Akun? <a href="<?= site_url('login') ?>" class="text-primary ml-2">Login</a></p>
               </div>
             </div>

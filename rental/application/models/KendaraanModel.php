@@ -27,17 +27,20 @@ class KendaraanModel extends CI_Model {
 
   //Input data kendaraan
   public function insert_kendaraan($data){
+    // Parameter data berisi data-data kendaraan yang akan diinputkan
     return $this->db->insert('kendaraan', $data);
   }
 
   //Update data kendaraan
   public function update_kendaraan($noPlat, $data){
+    // Parameter berupa noPlat sebagai PK data kendaraan serta isi data kendaraan yang akan diupdate
     $this->db->where('noPlat', $noPlat);
     return $this->db->update('kendaraan', $data);
   }
 
   //Delete data kendaraan
   public function delete_kendaraan($noPlat){
+    // Parameter berupa noPlat sebagai PK kendaraan yang akan dihapus
     $this->db->where('noPlat', $noPlat);
     return $this->db->delete('kendaraan');
   }

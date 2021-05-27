@@ -13,7 +13,9 @@
     <p>Ini masih sementara, hanya untuk testing sequence login, IMK Pesanan masih dalam progress</p>
 
     <p>Daftar Kendaraan</p>
+    <!-- Form untuk menampilkan fungsi addPesanan pada controller Pesanan -->
     <form action="<?= site_url('pesanan/addPesanan') ?>" method="post">
+        <!-- Menampilkan satu per satu data kendaraan yang ada pada database -->
         <?php $index=1; foreach (array_reverse($kendaraan) as $k) { ?>
         <input type="radio" name="noPlat" id="<?= $k['noPlat'] ?>" value="<?= $k['noPlat'] ?>">
         <label for="<?= $k['noPlat'] ?>"><?= $k['noPlat'] ?> - <?= $k['merekKendaraan'] ?> - <?= $k['jenisKendaraan'] ?> - <?= $k['warnaKendaraan'] ?></label><br>
