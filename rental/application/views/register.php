@@ -9,7 +9,53 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
 
     <!-- mycss -->
-    <link rel="stylesheet" href="register.css" />
+    <style>
+    .border-md {
+      border-width: 2px;
+    }
+
+    .btn-facebook {
+      background: #405d9d;
+      border: none;
+    }
+
+    .btn-facebook:hover,
+    .btn-facebook:focus {
+      background: #314879;
+    }
+
+    .btn-twitter {
+      background: #42aeec;
+      border: none;
+    }
+
+    .btn-twitter:hover,
+    .btn-twitter:focus {
+      background: #1799e4;
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    .form-control:not(select) {
+      padding: 1.5rem 0.5rem;
+    }
+
+    select.form-control {
+      height: 52px;
+      padding-left: 0.5rem;
+    }
+
+    .form-control::placeholder {
+      color: #ccc;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    .form-control:focus {
+      box-shadow: none;
+    }
+    </style>
 
     <!-- javascript -->
     <script src="register.js"></script>

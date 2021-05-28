@@ -14,6 +14,7 @@ class kendaraan extends CI_Controller
   {
     //page buat list daftar kendaraan di admin
     $content['title'] = "Home Admin";
+    $content['kendaraan'] = $this->KendaraanModel->get_all(); // Untuk menampilkan semua data kendaraan yang ada
     $this->load->view('homeAdmin', $content);
   }
 
@@ -22,6 +23,13 @@ class kendaraan extends CI_Controller
   {
     $content['kendaraan'] = $this->KendaraanModel->get_all(); // Untuk menampilkan semua data kendaraan yang ada
     $this->load->view('pesanan', $content); // Load view pesanan dengan data kendaraan
+  }
+
+  // Fungsi menampilkan form tambahKendaraan
+  public function pageTambahKendaraan()
+  {
+    $content['title'] = "Tambah Kendaraan";
+    $this->load->view('admin/tambahKendaraan', $content);
   }
 
   // Fungsi untuk input data kendaraan
@@ -49,11 +57,17 @@ class kendaraan extends CI_Controller
     redirect('kendaraan', 'refresh');
   }
 
+  // Fungsi menampilkan form updateKendaraan
+  public function pageUpdateKendaraan($noPlat)
+  {
+    $content['title'] = "Update Kendaraan";
+    $content['kendaraan'] = $this->KendaraanModel->get_kendaraan_noplat($noPlat);
+    $this->load->view('admin/updateKendaraan', $content);
+  }
+
   // Fungsi untuk update data kendaraan dengan parameter noPlat sebagai indikator
   public function updateKendaraan($noPlat)
   {
-    // Mengambil data noPlat kendaraan yang akan di update
-    $kendaraan = $this->KendaraanModel->get_kendaraan_noplat($noPlat);
     $data = array (
         'noPlat' => $kendaraan['noPlat'], //Data noPlat tidak diubah, tetap sama
         'merekKendaraan' => $this->input->post('merekKendaraan'), // assign merekKendaraan yang diinputkan ke data merekKendaraan
@@ -74,6 +88,14 @@ class kendaraan extends CI_Controller
     }
     // View direfresh dan direct ke view utama controller Kendaraan
     redirect('kendaraan', 'refresh');
+  }
+
+  // Fungsi menampilkan page hapusKendaraan
+  public function pageHapusKendaraan($noPlat)
+  {
+    $content['title'] = "Hapus Kendaraan";
+    $content['kendaraan'] = $this->KendaraanModel->get_kendaraan_noplat($noPlat);
+    $this->load->view('admin/hapusKendaraan', $content);
   }
 
   // Fungsi untuk delete data kendaraan dengan parameter noPlat sebagai indikator

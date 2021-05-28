@@ -29,7 +29,7 @@ class admin extends CI_Controller
       // Jika data ditemukan, set data username ke set session data agar dapat mengetahui admin mana yang sedang login ini
       $this->session->set_userdata('username', $data['username']);
       // View di alihkan ke page homeAdmin
-      redirect(site_url('homeAdmin'));
+      redirect(site_url('kendaraan'));
     } else {
       // Jika data tidak ditemukan, view loginAdmin akan di refresh
       $this->load->view('loginAdmin');
@@ -37,7 +37,5 @@ class admin extends CI_Controller
   }
 
 }
-
-
 /* End of file Admin.php */
 /* Location: ./application/controllers/Admin.php */

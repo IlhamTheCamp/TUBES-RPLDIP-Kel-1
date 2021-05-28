@@ -27,7 +27,7 @@
       /* jumbotron  */
 
       .jumbotron {    
-        background-image: url(homepage/img/tesla1.jpg);
+        background-image: url(https://i.imgur.com/L0g6VIo.jpg);
         background-size: cover;
         height: 800px;
         text-align: center;
@@ -173,7 +173,7 @@
           <div class="navbar-nav ml-auto">
             <a class="nav-link active" href="<?= site_url()?>">Home <span class="sr-only">(current)</span></a>
             <a class="nav-link" href="<?= site_url('login') ?>" >Customer</a>
-            <a class="nav-link" href="#">Admin</a>
+            <a class="nav-link" href="<?= site_url('admin') ?>">Admin</a>
           </div>
         </div>
       </div>
@@ -209,7 +209,7 @@
 
         <div class="row">
           <div class="col-sm-6 wow fadeInLeft">
-            <img class="img-responsive" src="homepage/img/about.png" alt="" />
+            <img class="img-responsive" src="https://i.imgur.com/dYxpwaK.png"/>
           </div>
 
           <div class="col-sm-6 wow fadeInRight">
@@ -249,11 +249,10 @@
           <div class="col-md-3 col-sm-6">
             <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
               <div class="team-img">
-                <img class="img-responsive" src="homepage/img/01.jpg" alt="" />
+                <img class="img-responsive" src="" alt="" />
               </div>
               <div class="team-info">
-                <h3>John Deo</h3>
-                <span>CEO</span>
+                <h3>Ilham Rizki Hidayat</h3>
               </div>
             </div>
           </div>
@@ -263,8 +262,7 @@
                 <img class="img-responsive" src="homepage/img/02.jpg" alt="" />
               </div>
               <div class="team-info">
-                <h3>Mike Timobbs</h3>
-                <span>Manager</span>
+                <h3>MMeyzo Naufal Romzi</h3>
               </div>
             </div>
           </div>
@@ -274,8 +272,7 @@
                 <img class="img-responsive" src="homepage/img/03.jpg" alt="" />
               </div>
               <div class="team-info">
-                <h3>Remo Silvaus</h3>
-                <span>Designer</span>
+                <h3>Rachmat Dwi Putra</h3>
               </div>
             </div>
           </div>
@@ -285,8 +282,8 @@
                 <img class="img-responsive" src="homepage/img/04.jpg" alt="" />
               </div>
               <div class="team-info">
-                <h3>Niscal Deon</h3>
-                <span>Engineer</span>
+                <h3>Djafar Shiddieq Ritonga</h3>
+                <h3>Arrhenius Mrandal</h3>
               </div>
             </div>
           </div>

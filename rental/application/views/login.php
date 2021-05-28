@@ -9,7 +9,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
 
     <!-- mycss -->
-    <link rel="stylesheet" href="/assets/css/login.css" />
+    <style>
+    .login,
+    .image {
+      min-height: 100vh;
+    }
+
+    .bg-image {
+      background-image: url('https://i.imgur.com/IRZI3Kx.jpg');
+      background-size: cover;
+      background-position: center center;
+    }
+    </style>
 
     <title>Login</title>
   </head>
