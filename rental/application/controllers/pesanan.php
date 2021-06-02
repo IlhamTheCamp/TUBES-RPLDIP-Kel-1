@@ -7,6 +7,7 @@ class pesanan extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('PesananModel'); // Load Model Pesanan
+        $this->load->helper('string'); // Untuk generate random code pesanan
     }
 
     public function index()
@@ -21,7 +22,7 @@ class pesanan extends CI_Controller {
             'kodeVerifikasi' => "test123", //nanti pake random generate
             'usernameKonsumen' => $_SESSION['username'], // assign session username ke dalam data usernameKonsumen
             'noPlat' => $this->input->post('noPlat'), // assign noPlat kendaraan yang dipilih ke dalam data noPlat
-            'IDPembayaran' => "130672", // assign kode pembayaran yang digunakan ke dalam data IDPembayaran
+            'IDPembayaran' => random_string('alnum', 10), // assign kode pembayaran yang digunakan ke dalam data IDPembayaran
         ); // assign tiap data yang sudah diinputkan ke dalam array $data untuk nantinya diinputkan ke dalam database transaksi
         $cek = $this->PesananModel->inputTransaksi($data); // inisiasi variabel cek yang isinya adalah fungsi insert data pada model ke database transaksi
         if ($cek) {

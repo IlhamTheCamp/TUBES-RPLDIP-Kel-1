@@ -47,8 +47,7 @@ class KendaraanModel extends CI_Model {
 
   //Hitung Biaya Sewa
   public function hitungBiaya($durasi, $biayaStandar){
-    $biayaTotal = $durasi * $biayaStandar;
-    return $biayaTotal;
+    return $durasi * $biayaStandar;
   }
 }
 

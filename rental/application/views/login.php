@@ -40,7 +40,7 @@
                   <h3 class="display-4">Login</h3>
                   <p class="text-muted">Silahkan masukkan Username dan Password anda!</p>
                   <!-- Membuat form untuk fungsi login pada controller login -->
-                  <form action="<?= site_url('login/login') ?>" method="post">
+                  <form action="<?= site_url('login/loginKonsumen') ?>" method="post">
                     <div class="form-group mb-3">
                       <input type="text" name="username" placeholder="Username" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4" required>
                     </div>

@@ -15,7 +15,7 @@ class login extends CI_Controller {
     }
 
     // Fungsi untuk login Konsumen
-    public function login()
+    public function loginKonsumen()
     {
         $data = [
             "username" => $this->input->post('username', true), // assign inputan username ke data username

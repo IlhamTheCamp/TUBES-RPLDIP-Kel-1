@@ -45,8 +45,8 @@ class kendaraan extends CI_Controller
         'stok' => $this->input->post('stok'), // assign stok yang diinputkan ke data stok
     ); // assign tiap data yang sudah diinputkan ke dalam array $data untuk nantinya diinputkan ke dalam database kendaraan
     // inisiasi variabel cek yang isinya adalah fungsi insert kendaraan pada model ke database kendaraan
-    $cek = $this->KendaraanModel->insert_kendaraan($data);
-    if ($cek) {
+    $tambah = $this->KendaraanModel->insert_kendaraan($data);
+    if ($tambah) {
       // Menampilkan peringatan berhasil jika data berhasil diinputkan
       $this->session->set_flashdata('info', 'Kendaraan Berhasil Ditambahkan');
     } else {
@@ -78,8 +78,8 @@ class kendaraan extends CI_Controller
         'stok' => $this->input->post('stok'), // assign stok yang diinputkan ke data stok
     ); // assign tiap data yang sudah diinputkan ke dalam array $data untuk nantinya diinputkan ke dalam database kendaraan
     // inisiasi variabel cek yang isinya adalah fungsi update kendaraan pada model ke database kendaraan
-    $cek = $this->KendaraanModel->update_kendaraan($noPlat, $data);
-    if ($cek) {
+    $update = $this->KendaraanModel->update_kendaraan($noPlat, $data);
+    if ($update) {
       // Menampilkan peringatan berhasil jika data berhasil diinputkan
       $this->session->set_flashdata('info', 'Kendaraan Berhasil Diupdate');
     } else {
@@ -103,8 +103,8 @@ class kendaraan extends CI_Controller
   {
     // inisiasi variabel cek yang isinya adalah fungsi delete kendaraan dengan parameter noPlat menunjukkan 
     // kendaraan mana yang akan di delete pada model ke database kendaraan
-    $cek = $this->KendaraanModel->delete_kendaraan($noPlat);
-    if ($cek) {
+    $hapus = $this->KendaraanModel->delete_kendaraan($noPlat);
+    if ($hapus) {
       // Menampilkan peringatan berhasil jika data berhasil dihapus
       $this->session->set_flashdata('info', 'Kendaraan Berhasil Dihapus');
     } else {
