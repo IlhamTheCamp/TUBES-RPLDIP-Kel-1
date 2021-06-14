@@ -7,6 +7,7 @@ class login extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('KonsumenModel'); // Load Model Konsumen
+        $this->load->library("unit_test");
     }
 
     public function index()
@@ -23,14 +24,25 @@ class login extends CI_Controller {
         ]; // assign tiap data yang sudah diinputkan ke dalam array $data untuk nantinya dicek ke dalam database
         // inisiasi variabel masuk yang isinya adalah fungsi login pada model untuk mengecek data ke database konsumen
         $masuk = $this->KonsumenModel->loginKonsumen($data); 
-        if ($masuk == TRUE){
+        if ($masuk){
             // Jika data ditemukan, set data username ke set session data agar dapat mengetahui user mana yang sedang login ini
             $this->session->set_userdata('username', $data['username']);
             // View di alihkan ke page homeKonsumen
             redirect(site_url('homeKonsumen'));
+            return "6";
         } else {
             // Jika data tidak ditemukan, view login akan di refresh
             $this->load->view('login');
+            return "1";
         }
+    }
+
+    //Testing Login
+    public function testLoginKonsumen()
+    {
+        $test = $this->loginKonsumen();
+        $expected = "6";
+        $name = "Test Login Konsumen -- Login Berhasil";
+        echo $this->unit->run($test, $expected, $name);
     }
 }

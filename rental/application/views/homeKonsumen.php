@@ -1,22 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Berhasil Login</title>
-</head>
-<body>
-    <h1>Selamat, berhasil login</h1>
-    <h2>Username kamu <?php echo $_SESSION['username'] ?></h2>
-
-    <p>Ini masih sementara, hanya untuk testing sequence login, IMK HomeKonsumen masih dalam progress</p>
-
-    <p><a href="<?= site_url('kendaraan/pesanan') ?>">Pesanan</a></p>
-</body>
-</html> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -143,8 +124,8 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
             <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-link" href="#services">Promo</a>
             <a class="nav-link">Selamat datang, <?php echo $_SESSION['username'] ?></a>
+            <a class="nav-link" href="<?= site_url('home') ?>">Log Out</a>
             </form>
             </div>
           </div>
@@ -163,7 +144,7 @@
           "<span>Get</span> your <span>better</span> car <br />
           with <span>us</span>"
         </p>
-        <button type="button" class="btn btn-warning">Pemesanan</button>
+        <button type="button" class="btn btn-warning"><a href="<?= site_url('kendaraan/pesanan') ?>">Pemesanan</a></button>
         <button type="button" class="btn btn-warning">Pembayaran</button>
       </div>
     </div>
